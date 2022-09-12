@@ -8,11 +8,12 @@ import Tab from '@mui/material/Tab'
 import TabList from '@mui/lab/TabList'
 import TabContext from '@mui/lab/TabContext'
 import TabPanel from '@mui/lab/TabPanel'
+import InfectionTab from './InfectionTab';
 
 
 export default function TabUI() {
   const [tabId, setTabId] = useState("infection");
-  const handleTabChange = (event, newTabId) => { setTabId(newTabId)};
+  const handleTabChange = (event, newTabId) => { setTabId(newTabId) };
 
   return (
     <TabContext value={tabId}>
@@ -23,13 +24,11 @@ export default function TabUI() {
         </TabList>
       </Box>
 
-      <TabPanel value="infection">
-        <Typography variant="body1" gutterBottom>
-          Infection Deck not Implemented
-        </Typography>
+      <TabPanel value="infection" sx={{ px: 0 }} >
+        <InfectionTab />
       </TabPanel>
 
-      <TabPanel value="player">
+      <TabPanel value="player" sx={{ px: 0 }} >
         <Typography variant="body1" gutterBottom>
           Player Deck not Implemented
         </Typography>
